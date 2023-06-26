@@ -1,21 +1,22 @@
 name: Hello World Docker Action
-on: 
+on:
+	
   push:
-    branches: 
-	  - main
-    paths: 
-	    - hello-world-docker-action/** 
-  workflow_dispatch:
+  	branches:
+    	- main
+		paths: 
+    	- hello-world-docker-action/** 
+	workflow_dispatch:
   
 jobs: 
   test-action:
     runs-om: ubuntu-latest
     steps:
        - name: Checkout
-        uses: actions/checkout@v3.3.0
+			 	 uses: actions/checkout@v3.3.0
 
       - name: Test Hello World Docker Action
-        id: hello-action
+				id: hello-action
         uses: ./hello-world-docker-action
         with:
           who-to-greet: '@wulfland'
