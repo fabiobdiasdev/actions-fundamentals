@@ -1,16 +1,16 @@
 name: Reusabel Workflow
 
-on: 
-  workflow_run:
+on:
+  workflow_call:
     inputs:
       who-to-greet:
         description: 'The person to greet'
         type: string
-        default: 'World'
         required: true
+        default: World
     outputs:
       current-time:
-        description: 'Time when greeting'
+        description: 'The time when greeting.'
         value: ${{ jobs.reusable-job.outputs.current-time }}
         
 jobs:
